@@ -37,8 +37,9 @@
             <Image Source="Assets/cps-logoimg.png" HorizontalAlignment="Left" Margin="31,0,0,0"></Image>
 
         </Grid>
-        <TextBlock HorizontalAlignment="Center"  Grid.Row="1" TextWrapping="Wrap" Text="0 seconds" VerticalAlignment="Top" Foreground="LightGray"/>
-        <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="0 Clicks" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Center"  Grid.Row="1" TextWrapping="Wrap" Text="0 seconds" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="0,61,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="0 Clicks" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="183,61,0,0"/>
+        
         <Ellipse HorizontalAlignment="Left" Height="258" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2">
             <Ellipse.Stroke>
                 <SolidColorBrush Color="#FF433FD0" Opacity="0.38"/>
@@ -49,7 +50,10 @@
                     <GradientStop Color="#FF433FD0" Offset="0.477"/>
                 </LinearGradientBrush>
             </Ellipse.Fill>
-        </Ellipse>
+        </Ellipse> 
+        
+
+        
         <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>
