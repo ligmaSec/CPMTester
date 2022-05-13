@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Background="#181735">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
@@ -30,10 +31,25 @@
 
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="10 seconds" Foreground="White" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,27,0,0"></TextBlock>
-            <TextBlock Text="CPMTester" Foreground="LightGray" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
-            <TextBlock Text="30 seconds" Foreground="White" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,27,0,0"></TextBlock>
+            <TextBlock Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0"></TextBlock>
+            <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
+            <TextBlock Text="30 seconds" Foreground="LightGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0"></TextBlock>
+            <Image Source="Assets/cps-logoimg.png" HorizontalAlignment="Left" Margin="31,0,0,0"></Image>
 
         </Grid>
+        <TextBlock HorizontalAlignment="Center"  Grid.Row="1" TextWrapping="Wrap" Text="0 seconds" VerticalAlignment="Top" Foreground="LightGray"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="0 Clicks" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1"/>
+        <Ellipse HorizontalAlignment="Left" Height="258" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2">
+            <Ellipse.Stroke>
+                <SolidColorBrush Color="#FF433FD0" Opacity="0.38"/>
+            </Ellipse.Stroke>
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" Opacity="0.4" SpreadMethod="Pad">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF433FD0" Offset="0.477"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>
