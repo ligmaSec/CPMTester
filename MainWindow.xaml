@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPMTester"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#0F0F2D" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="10 seconds" Foreground="White" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,27,0,0"></TextBlock>
+            <TextBlock Text="CPMTester" Foreground="LightGray" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
+            <TextBlock Text="30 seconds" Foreground="White" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,27,0,0"></TextBlock>
+
+        </Grid>
     </Grid>
 </Window>
