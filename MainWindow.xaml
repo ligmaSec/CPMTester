@@ -43,7 +43,7 @@
                 <TextBlock x:Name="_10secsTest" Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" MouseDown="_10secsTest_MouseDown" Cursor="Hand"></TextBlock>
                 <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
                 <TextBlock x:Name="_30secsTest" Text="30 seconds" Foreground="DimGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" Cursor="Hand" MouseDown="_30secsTest_MouseDown"></TextBlock>
-                <Image x:Name="close" Source="Assets/cross.png"  Grid.Column="4" HorizontalAlignment="Left" Height="22" Margin="111,10,0,0" VerticalAlignment="Top" Width="23" MouseDown="Close_OnMouseDown" Cursor="Hand">
+                <Image x:Name="close" Source="Assets/cross.png"  Grid.Column="4" HorizontalAlignment="Left" Height="22" Margin="111,10,0,0" VerticalAlignment="Top" Width="23" MouseUp="close_MouseUp" Cursor="Hand">
                     <Image.Effect>
                         <DropShadowEffect/>
                     </Image.Effect>
@@ -94,6 +94,7 @@
 
         <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Button x:Name="reset" Grid.Column="1" Content="Reset" HorizontalAlignment="Left" Margin="256,312,0,0" Grid.Row="1" VerticalAlignment="Top" Click="reset_Click"/>
+        <TextBlock  x:Name="Version" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Text="Ver 0.0.1" Grid.Column="1" Margin="0,0,10,10" Grid.Row="1"/>
 
     </Grid>
 

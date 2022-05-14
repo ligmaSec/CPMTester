@@ -34,9 +34,11 @@ namespace CPMTester
             }
         }
 
+
         public MainWindow()
         {
             InitializeComponent();
+            Version.Text = "0.0.69";
         }
 
         private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -63,18 +65,6 @@ namespace CPMTester
         }
 
 
-        /*
-        private void centerText_Click(object sender, RoutedEventArgs e)
-        {
-            _10secsTest.Foreground = Brushes.Black;
-        } */
-
-
-        private void Close_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
-            //throw new NotImplementedException();
-        }
 
         private void _10secsTest_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -86,6 +76,12 @@ namespace CPMTester
         {
             _30secsTest.Foreground = Brushes.LightGray;
             _10secsTest.Foreground = Brushes.DimGray;
+
+        }
+
+        private void close_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Close();
         }
     }
 }
