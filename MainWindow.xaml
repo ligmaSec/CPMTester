@@ -93,7 +93,38 @@
 
 
         <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Button x:Name="reset" Grid.Column="1" Content="Reset" HorizontalAlignment="Left" Margin="256,312,0,0" Grid.Row="1" VerticalAlignment="Top" Click="reset_Click"/>
+        <Button x:Name="reset" FontSize="14" FontFamily="Fonts/#Dosis" Content="Reset" HorizontalAlignment="Left" Margin="375,18,0,0" Grid.Row="1" VerticalAlignment="Top" Click="reset_Click" Foreground="White" Grid.ColumnSpan="2">
+
+
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Background" Value="#0F0F2D">
+                    </Setter>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF433FD0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="50"
+        Height="20"
+        CornerRadius="10"
+        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <TextBlock  x:Name="Version" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Text="Ver 0.0.1" Grid.Column="1" Margin="0,0,10,10" Grid.Row="1"/>
 
     </Grid>
