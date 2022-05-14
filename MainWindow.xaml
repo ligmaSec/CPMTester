@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Background="#181735">
+        Background="#FF181735" AllowsTransparency="True">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
@@ -20,7 +20,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Background="#0F0F2D" Grid.ColumnSpan="2">
+
+        <Grid  Background="#0F0F2D" Grid.ColumnSpan="2" MouseDown="UIElement_OnMouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -31,15 +32,15 @@
 
             </Grid.ColumnDefinitions>
 
+
             <TextBlock Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0"></TextBlock>
             <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
             <TextBlock Text="30 seconds" Foreground="LightGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0"></TextBlock>
             <Image Source="Assets/cps-logoimg.png" HorizontalAlignment="Left" Margin="31,0,0,0"></Image>
 
         </Grid>
-        <TextBlock HorizontalAlignment="Center"  Grid.Row="1" TextWrapping="Wrap" Text="0 seconds" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="0,61,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="0 Clicks" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="183,61,0,0"/>
-        
+        <TextBlock HorizontalAlignment="Left"  Grid.Row="1" TextWrapping="Wrap" Text="0 seconds" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,16,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="0 Clicks" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="285,22,0,0"/>
         <Ellipse HorizontalAlignment="Left" Height="258" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2">
             <Ellipse.Stroke>
                 <SolidColorBrush Color="#FF433FD0" Opacity="0.38"/>
@@ -50,10 +51,30 @@
                     <GradientStop Color="#FF433FD0" Offset="0.477"/>
                 </LinearGradientBrush>
             </Ellipse.Fill>
-        </Ellipse> 
-        
+        </Ellipse>
 
-        
+        <Button  Grid.ColumnSpan="2" Margin="275,73,275,74" Grid.Row="1" BorderBrush="#FFE8DADA" Click="Button_Click">
+            <Button.OpacityMask>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType=Button, AncestorLevel=1}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType=Button, AncestorLevel=1}}">
+                            <Ellipse HorizontalAlignment="Left" Height="258" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2">
+                                <Ellipse.Stroke>
+                                    <SolidColorBrush Color="#FF433FD0" Opacity="0.38"/>
+                                </Ellipse.Stroke>
+
+                            </Ellipse>
+                        </Grid>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Button.OpacityMask>
+        </Button>
+
+
+
+
         <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
     </Grid>
+    
 </Window>
