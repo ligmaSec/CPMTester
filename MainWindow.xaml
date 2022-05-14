@@ -43,14 +43,14 @@
                 <TextBlock x:Name="_10secsTest" Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" MouseDown="_10secsTest_MouseDown" Cursor="Hand"></TextBlock>
                 <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
                 <TextBlock x:Name="_30secsTest" Text="30 seconds" Foreground="DimGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" Cursor="Hand" MouseDown="_30secsTest_MouseDown"></TextBlock>
-                <Image x:Name="close" Source="Assets/cross.png"  Grid.Column="4" HorizontalAlignment="Left" Height="22" Margin="111,10,0,0" VerticalAlignment="Top" Width="23" MouseUp="close_MouseUp" Cursor="Hand">
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
-                </Image>
 
             </Grid>
         </Border>
+        <Image x:Name="close" Source="Assets/cross.png"  Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="356,0,0,0" VerticalAlignment="Center" Width="23" MouseUp="close_MouseUp" Cursor="Hand">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
 
         <Border CornerRadius="0,0,12,12" Grid.Row="1" Grid.ColumnSpan="2" Background="#FF181735">
             <Grid></Grid>
