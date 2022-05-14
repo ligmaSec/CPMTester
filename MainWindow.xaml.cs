@@ -20,14 +20,23 @@ namespace CPMTester
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int _count = 0;
+
+        public int Count
+        {
+            get
+            {
+                return _count;
+            }
+            set
+            {
+                _count = value;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("negro");
         }
 
         private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -36,6 +45,47 @@ namespace CPMTester
             {
                 DragMove();
             }
+        }
+
+        private void clicker_Click(object sender, RoutedEventArgs e)
+        {
+
+            clickCount.Text = Convert.ToString(Count);
+            centerText.Text = String.Empty;
+            Count++;
+        }
+
+
+        private void reset_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("reset");
+
+        }
+
+
+        /*
+        private void centerText_Click(object sender, RoutedEventArgs e)
+        {
+            _10secsTest.Foreground = Brushes.Black;
+        } */
+
+
+        private void Close_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            //throw new NotImplementedException();
+        }
+
+        private void _10secsTest_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            _10secsTest.Foreground = Brushes.LightGray;
+            _30secsTest.Foreground = Brushes.DimGray;
+        }
+
+        private void _30secsTest_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            _30secsTest.Foreground = Brushes.LightGray;
+            _10secsTest.Foreground = Brushes.DimGray;
         }
     }
 }

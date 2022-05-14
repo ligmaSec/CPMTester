@@ -8,10 +8,13 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Background="#FF181735" AllowsTransparency="True">
+        Background="Transparent" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -20,27 +23,43 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-
-        <Grid  Background="#0F0F2D" Grid.ColumnSpan="2" MouseDown="UIElement_OnMouseDown">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+        <Border Grid.ColumnSpan="2" CornerRadius="12,12,0,0"  Background="#0F0F2D" MouseDown="UIElement_OnMouseDown">
+            <Grid  Grid.ColumnSpan="4" Grid.RowSpan="1" >
 
 
-            </Grid.ColumnDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
 
 
-            <TextBlock Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0"></TextBlock>
-            <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
-            <TextBlock Text="30 seconds" Foreground="LightGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0"></TextBlock>
-            <Image Source="Assets/cps-logoimg.png" HorizontalAlignment="Left" Margin="31,0,0,0"></Image>
+                </Grid.ColumnDefinitions>
 
-        </Grid>
-        <TextBlock HorizontalAlignment="Left"  Grid.Row="1" TextWrapping="Wrap" Text="0 seconds" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,16,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="0 Clicks" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="285,22,0,0"/>
+
+
+                <TextBlock x:Name="_10secsTest" Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" MouseDown="_10secsTest_MouseDown" Cursor="Hand"></TextBlock>
+                <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
+                <TextBlock x:Name="_30secsTest" Text="30 seconds" Foreground="DimGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" Cursor="Hand" MouseDown="_30secsTest_MouseDown"></TextBlock>
+                <Image x:Name="close" Source="Assets/cross.png"  Grid.Column="4" HorizontalAlignment="Left" Height="22" Margin="111,10,0,0" VerticalAlignment="Top" Width="23" MouseDown="Close_OnMouseDown" Cursor="Hand">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+
+            </Grid>
+        </Border>
+
+        <Border CornerRadius="0,0,12,12" Grid.Row="1" Grid.ColumnSpan="2" Background="#FF181735">
+            <Grid></Grid>
+        </Border>
+
+        <TextBlock x:Name="secs"  Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,22,301,0"/>
+        <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="Seconds" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,54,234,0"/>
+        <TextBlock x:Name="clickCount" Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="285,22,42,0"/>
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Clicks" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="285,54,42,0"/>
         <Ellipse HorizontalAlignment="Left" Height="258" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2">
             <Ellipse.Stroke>
                 <SolidColorBrush Color="#FF433FD0" Opacity="0.38"/>
@@ -53,15 +72,14 @@
             </Ellipse.Fill>
         </Ellipse>
 
-        <Button  Grid.ColumnSpan="2" Margin="275,73,275,74" Grid.Row="1" BorderBrush="#FFE8DADA" Click="Button_Click">
+        <TextBlock x:Name="centerText" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Click here" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="354,180,0,0" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="clicker"  Grid.ColumnSpan="2" Margin="275,73,275,74" Grid.Row="1" BorderBrush="#FFE8DADA" Click="clicker_Click">
             <Button.OpacityMask>
                 <VisualBrush>
                     <VisualBrush.Visual>
                         <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType=Button, AncestorLevel=1}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType=Button, AncestorLevel=1}}">
                             <Ellipse HorizontalAlignment="Left" Height="258" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2">
-                                <Ellipse.Stroke>
-                                    <SolidColorBrush Color="#FF433FD0" Opacity="0.38"/>
-                                </Ellipse.Stroke>
 
                             </Ellipse>
                         </Grid>
@@ -69,12 +87,15 @@
                 </VisualBrush>
             </Button.OpacityMask>
         </Button>
-
+        <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="LightGray" Margin="393,337,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="CPS" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="LightGray" Margin="381,363,0,0" Grid.ColumnSpan="2"/>
 
 
 
         <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="reset" Grid.Column="1" Content="Reset" HorizontalAlignment="Left" Margin="256,312,0,0" Grid.Row="1" VerticalAlignment="Top" Click="reset_Click"/>
 
     </Grid>
-    
+
+
 </Window>
