@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace CPMTester
 {
@@ -20,25 +21,14 @@ namespace CPMTester
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int _count = 0;
 
-        public int Count
-        {
-            get
-            {
-                return _count;
-            }
-            set
-            {
-                _count = value;
-            }
-        }
+        Challenge c = new Challenge();
 
 
         public MainWindow()
         {
             InitializeComponent();
-            Version.Text = "0.0.69";
+            Version.Text = "0.0.1";
         }
 
         private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -52,15 +42,15 @@ namespace CPMTester
         private void clicker_Click(object sender, RoutedEventArgs e)
         {
 
-            clickCount.Text = Convert.ToString(Count);
+            clickCount.Text = Convert.ToString(c.Count);
             centerText.Text = String.Empty;
-            Count++;
+            c.Count++;
         }
 
 
         private void reset_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("reset");
+            c.test();
 
         }
 
@@ -74,6 +64,7 @@ namespace CPMTester
 
         private void _30secsTest_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            c.Type = 1;
             _30secsTest.Foreground = Brushes.LightGray;
             _10secsTest.Foreground = Brushes.DimGray;
 
@@ -81,7 +72,11 @@ namespace CPMTester
 
         private void close_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }
+
+
+
+

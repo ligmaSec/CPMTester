@@ -41,7 +41,7 @@
 
 
                 <TextBlock x:Name="_10secsTest" Text="10 seconds" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" MouseDown="_10secsTest_MouseDown" Cursor="Hand"></TextBlock>
-                <TextBlock Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18"></TextBlock>
+                <TextBlock x:Name="title1" Text="CPSTester" Foreground="White" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="ExtraBold" FontSize="18" Margin="0,2,0,0"></TextBlock>
                 <TextBlock x:Name="_30secsTest" Text="30 seconds" Foreground="DimGray" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Fonts/#Dosis" FontWeight="Medium" FontSize="18" Margin="0,18,0,0" Cursor="Hand" MouseDown="_30secsTest_MouseDown"></TextBlock>
 
             </Grid>
@@ -52,7 +52,7 @@
             </Image.Effect>
         </Image>
 
-        <Border CornerRadius="0,0,12,12" Grid.Row="1" Grid.ColumnSpan="2" Background="#FF181735">
+        <Border CornerRadius="0,0,3,3" Grid.Row="1" Grid.ColumnSpan="2" Background="#FF181735">
             <Grid></Grid>
         </Border>
 
@@ -88,7 +88,7 @@
             </Button.OpacityMask>
         </Button>
         <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="LightGray" Margin="393,337,0,0" Grid.ColumnSpan="2"/>
-        <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="CPS" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="LightGray" Margin="381,363,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="CPS" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="381,363,380,0" Grid.ColumnSpan="2"/>
 
 
 
