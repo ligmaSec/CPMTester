@@ -12,9 +12,9 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
 
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="52"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -56,7 +56,7 @@
             <Grid></Grid>
         </Border>
 
-        <TextBlock x:Name="secs"  Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,22,301,0"/>
+        <TextBlock x:Name="countdown"  Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,22,117,0"/>
         <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="Seconds" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="86,54,234,0"/>
         <TextBlock x:Name="clickCount" Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="285,22,42,0"/>
         <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Clicks" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Grid.Column="1" Margin="285,54,42,0"/>
@@ -74,7 +74,9 @@
 
         <TextBlock x:Name="centerText" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Click here" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="354,180,0,0" Grid.ColumnSpan="2"/>
 
-        <Button x:Name="clicker"  Grid.ColumnSpan="2" Margin="275,73,275,74" Grid.Row="1" BorderBrush="#FFE8DADA" Click="clicker_Click">
+
+
+        <Button x:Name="clicker"  Grid.ColumnSpan="2" Margin="275,73,275,74" Grid.Row="1" BorderBrush="#FFE8DADA" Click="clicker_Click" Cursor="Cross">
             <Button.OpacityMask>
                 <VisualBrush>
                     <VisualBrush.Visual>
@@ -87,12 +89,12 @@
                 </VisualBrush>
             </Button.OpacityMask>
         </Button>
-        <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="LightGray" Margin="393,337,0,0" Grid.ColumnSpan="2"/>
+
+        <TextBlock  x:Name="cps" Grid.Row="1" TextWrapping="Wrap" Text="0" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="391,333,365,0" Grid.ColumnSpan="2"/>
         <TextBlock  Grid.Row="1" TextWrapping="Wrap" Text="CPS" FontFamily="Fonts/#Dosis" FontSize="25" VerticalAlignment="Top" Foreground="LightGray" Margin="381,363,380,0" Grid.ColumnSpan="2"/>
 
 
 
-        <CheckBox Grid.Column="1" Content="CheckBox" HorizontalAlignment="Left" Margin="220,537,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Button x:Name="reset" FontSize="14" FontFamily="Fonts/#Dosis" Content="Reset" HorizontalAlignment="Left" Margin="375,18,0,0" Grid.Row="1" VerticalAlignment="Top" Click="reset_Click" Foreground="White" Grid.ColumnSpan="2">
 
 
