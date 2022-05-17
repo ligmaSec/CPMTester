@@ -90,12 +90,13 @@ namespace CPMTester
                 float resultat = (float)Count / secondsType;
                 cps.Text = Convert.ToString(resultat);
                 Count = 0;
+                clicker.IsEnabled = false;
             }
         }
 
         private void reset_Click(object sender, RoutedEventArgs e)
         {
-            
+            InitializeComponent();
         }
 
 
